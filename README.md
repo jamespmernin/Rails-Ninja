@@ -32,7 +32,7 @@ Next, go to your `app/models` folder and:
 Great! Now we'll need some data to see if everything is working the way we think.
 
 ## Seed Data
-Next, go to your `db/seeds.rb` folder and run `rails db:seed`
+Next, go to your `/db` folder and run `rails db:seed`
 
 **Don't uncomment and run the Student instances since you haven't created Student model yet.**
 
@@ -91,7 +91,7 @@ end
 
 If you get stuck, check the `dojos_controller.rb` file in this repository for help. Additionally, if you were able to figure out the whole thing on your own, please still double check that file and make sure your solution is similar. There are multiple potential solutions, so it's okay if yours looks a little different, but it should be similar to the answer in that file.
 
-Next, make a folder named `senseis_controller.rb` and follow the same steps you followed for `dojos_controller.rb`. Here's the index method again: 
+Next, make a file named `senseis_controller.rb` and follow the same steps you followed for `dojos_controller.rb`. Here's the index method again: 
 
 ```rb
 def index
@@ -113,15 +113,11 @@ Make sure everything is saved and launch your rails server with `rails s`. Visit
   - `http://localhost:3000/dojos/1/senseis/1`
   - `http://localhost:3000/dojos/1/senseis/2`
   
-If you see the appropriate JSON data at each of these endpoints, congrats! You've completed part 1 of this lab. Slack your instructors and await further instruction.
-
-# End of Part 1
+If you see the appropriate JSON data at each of these endpoints, congrats! 
 
 <hr>
 
 # Part 2
-We're going to work through this together, so please don't work ahead on this section unless you're instructors have directed you to do so.
-
 We're now going to add a Student model to our database and create a `has_many :through` relationship. Let's get started:
 
 ## Add to Models
