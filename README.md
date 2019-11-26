@@ -3,7 +3,7 @@ Time to get some Rails reps in! In this lab, you're going to set up a full CRUD 
 
 You'll do this in two parts:
 1. You'll build out a `one to many` backend featuring dojos that `have_many :senseis`
-1. You'll add a Student model to this backend so that dojos `have_many :students, through: :senseis`.
+1. You'll add a Student model to this backend so that dojos `has_many :students, through: :senseis`.
 
 ## Initial Setup
 
@@ -32,7 +32,9 @@ Next, go to your `app/models` folder and:
 Great! Now we'll need some data to see if everything is working the way we think.
 
 ## Seed Data
-Scroll to the top of this repository and open `seed_one.rb`. Copy and paste the data there into your `db/seed.rb` file. Then, run `rails db:seed`.
+Next, go to your `db/seeds.rb` folder and run `rails db:seed`
+
+**Don't uncomment and run the Student instances since you haven't created Student model yet.**
 
 Let's use the console and Active Record to explore our data. In the terminal type `rails c` to open up the console so we can check our app's database, and using Active Record, check the following:
   - `Dojo.all`
@@ -42,7 +44,7 @@ Let's use the console and Active Record to explore our data. In the terminal typ
   - `Sensei.first.dojo`
   - `Sensei.second.dojo`
   
-> Note: Try adding the Awesome Print gem if you'd like the data to look nicer in your terminal.
+> Note: Try adding the Awesome Print gem if you'd like the data to look nicer in your terminal. You can also use `pry`
   
 ## Routes
 Your data is in the database ready to go, so let's set up some endpoints so it can be accessed. Navigate to your `config/routes.rb` file and add:
@@ -103,7 +105,7 @@ Check the `senseis_controller.rb` file in this repository when you either get st
 
 ## GET SERVED
 Make sure everything is saved and launch your rails server with `rails s`. Visit the following:
-  - `http://localhost:3000/dojos
+  - `http://localhost:3000/dojos`
   - `http://localhost:3000/dojos/1` 
   - `http://localhost:3000/dojos/2`
   - `http://localhost:3000/dojos/1/senseis`
@@ -162,10 +164,10 @@ Check your routes in the controller with `rails routes`. Take a look at how the 
 ## Add StudentsController
 Time to set up some logic for our student model. Add a `students_controller.rb` file to your `app/controllers` folder. Like before, see if you can use your other controllers to figure out what needs to go here. On your get routes, try to `include:` both `sensei` and `dojo` data when you return the students JSON. You may have to look up the sytax for this. 
 
-Once again, if you get stuck, or if you think you've solved it, check the `students_controller.rb` file in this repository for guidance.
 
 ## GET SERVED AGAIN
 Make sure everything is saved and launch your rails server with `rails s`. Visit the following:
+
   - `http://localhost:3000/dojos/1/senseis/1/students`
   - `http://localhost:3000/dojos/1/senseis/2/students`
   - `http://localhost:3000/dojos/1/senseis/3/students`
@@ -178,4 +180,3 @@ In your Gemfile, un-comment the line `gem 'rack-cors'`. Then, in your terminal, 
 
 Next, navigate to `config/initializers/cors.rb` and uncomment the entire `Rails.application.config.middleware...end` block. Make sure the origins are set to `"*"` for all.
 
-YOU'VE DONE IT!
