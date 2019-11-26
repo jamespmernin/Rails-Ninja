@@ -136,7 +136,7 @@ Now, let's define the relationship between our three tables by adding the follow
 - in `app/models/student.rb` add `belongs_to :sensei`
 
 ## Add to Seed Data
-Copy the seed data from `seed_two.rb` and add it below the original seed data in your `db/seed.rb` file.
+- Uncomment the rest of the seed data in the db/seeds 
 
 - Next, run `rails db:reset`. You **do not** need to run `rails db:seed` after this command; it will happen automatically.
 
