@@ -101,7 +101,6 @@ def index
 end
 ```
 
-Check the `senseis_controller.rb` file in this repository when you either get stuck or think that you've completed it.
 
 ## GET SERVED
 Make sure everything is saved and launch your rails server with `rails s`. Visit the following:
