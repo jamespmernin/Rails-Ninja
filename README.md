@@ -2,7 +2,7 @@
 Time to get some Rails reps in! In this lab, you're going to set up a full CRUD Rails API for dojos, senseis, and students.
 
 You'll do this in two parts:
-1. You'll build out a `one to many` backend featuring dojos that `have_many :senseis`
+1. You'll build out a `one to many` backend featuring dojos that `has_many :senseis`
 1. You'll add a Student model to this backend so that dojos `has_many :students, through: :senseis`.
 
 ## Initial Setup
