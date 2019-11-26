@@ -50,7 +50,7 @@ Let's use the console and Active Record to explore our data. In the terminal typ
 Your data is in the database ready to go, so let's set up some endpoints so it can be accessed. Navigate to your `config/routes.rb` file and add:
 
 ```rb
-resources :dojo do
+resources :dojos do
   resources :senseis
 end
 ```
@@ -148,7 +148,7 @@ Awesome! Now lets set up some endpoints so our newly thicc data can be accessed.
 ## Set up Routes
 In config/routes.rb, add `:students` as a nested route within `:senseis`:
 ```
-resources :dojo do
+resources :dojos do
   resources :senseis do 
     resources :students 
   end
