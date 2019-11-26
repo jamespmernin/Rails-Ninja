@@ -1,4 +1,4 @@
-# rails-api-ninja-lab
+# rails-ninja
 Time to get some Rails reps in! In this lab, you're going to set up a full CRUD Rails API for dojos, senseis, and students.
 
 You'll do this in two parts:
@@ -17,7 +17,10 @@ Next you need to create your first 2 models. Remember, the format is `rails g mo
 - `rails g model Dojo name motto:text`
 
 Our Sensei model will have "name" and "image_url" as strings, "wise_quote" as text, and it will reference the id of a dojo:
-- `rails g model Sensei name image_url wise_quote:text references:dojo`
+- `rails g model Sensei name image_url wise_quote:text dojo:references`
+
+If you think you've made a mistake you can always destroy your model by `rails destroy model <model_name>`. Please make sure that you do any changes before migration.
+
 
 Double check your migration files to make sure you didn't have any typos. If you did, fix them now. Then, go to your terminal and write:
 - `rails db:migrate`
