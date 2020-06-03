@@ -59,7 +59,7 @@ Check your routes in the controller with `rails routes`.
 ## Controllers
 We now have endpoints ready for HTTP calls, but we don't have any logic saying what should happen if those endpoints were hit. Let's set up some controllers to handle that.
 
-Inside the controllers folder, make a folder named `dojos_controller.rb`. Have the DojoController inherit from the ApplicationController, and inside that, set up your `index`, `show`, `create`, `update`, and `destroy` methods. Also, make a private `dojos_params` method.
+Inside the controllers folder, make a file named `dojos_controller.rb`. Have the DojoController inherit from the ApplicationController, and inside that, set up your `index`, `show`, `create`, `update`, and `destroy` methods. Also, make a private `dojos_params` method.
 
 See how far you can get from using your memory or referencing an old project. Here's the `index` method, just to get the ball rolling.
 
