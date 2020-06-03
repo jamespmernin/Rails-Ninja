@@ -89,8 +89,6 @@ class DojosController < ApplicationController
 end
 ```
 
-If you get stuck, check the `dojos_controller.rb` file in this repository for help. Additionally, if you were able to figure out the whole thing on your own, please still double check that file and make sure your solution is similar. There are multiple potential solutions, so it's okay if yours looks a little different, but it should be similar to the answer in that file.
-
 Next, make a file named `senseis_controller.rb` and follow the same steps you followed for `dojos_controller.rb`. Here's the index method again: 
 
 ```rb
