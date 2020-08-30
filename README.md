@@ -8,8 +8,9 @@ You'll do this in two parts:
 ## Initial Setup
 
 1. Fork and clone this repo
-
-2. `rails db:create`
+1. `cd` into the repo
+1. `rails new . -MT --skip-active-storage --api --database=postgresql`
+1. `rails db:create`
 
 
 ## Models
@@ -27,12 +28,13 @@ Double check your migration files to make sure you didn't have any typos. If you
 
 Next, go to your `app/models` folder and:
 - in `dojo.rb` add `has_many :senseis, dependent: :destroy`
-- in `sensei.rb` add `belongs_to :dojo`
+- in `sensei.rb` make sure that `belongs_to :dojo` is there
 
 Great! Now we'll need some data to see if everything is working the way we think.
 
 ## Seed Data
-Next, go to your `/db` folder and run `rails db:seed`
+Next, go to your `/db` folder and add the [seed data](./seed.rd) to your `seed.rb` file.
+Then run `rails db:seed`
 
 **Don't uncomment and run the Student instances since you haven't created Student model yet.**
 
@@ -44,7 +46,7 @@ Let's use the console and Active Record to explore our data. In the terminal typ
   - `Sensei.first.dojo`
   - `Sensei.second.dojo`
   
-> Note: Try adding the Awesome Print gem if you'd like the data to look nicer in your terminal. You can also use `pry`
+> Note: Try adding the [Awesome Print](https://github.com/awesome-print/awesome_print) gem if you'd like the data to look nicer in your terminal. You can also using [pry](https://github.com/rweng/pry-rails) for rails
   
 ## Routes
 Your data is in the database ready to go, so let's set up some endpoints so it can be accessed. Navigate to your `config/routes.rb` file and add:
@@ -59,7 +61,9 @@ Check your routes in the controller with `rails routes`.
 ## Controllers
 We now have endpoints ready for HTTP calls, but we don't have any logic saying what should happen if those endpoints were hit. Let's set up some controllers to handle that.
 
-Inside the controllers folder, make a file named `dojos_controller.rb`. Have the DojoController inherit from the ApplicationController, and inside that, set up your `index`, `show`, `create`, `update`, and `destroy` methods. Also, make a private `dojos_params` method.
+`rails g controller Dojos`
+
+Inside the controllers folder, you'll find a file named `dojos_controller.rb`. Inside that, set up your `index`, `show`, `create`, `update`, and `destroy` methods. Also, make a private `dojos_params` method.
 
 See how far you can get from using your memory or referencing an old project. Here's the `index` method, just to get the ball rolling.
 
@@ -89,7 +93,7 @@ class DojosController < ApplicationController
 end
 ```
 
-Next, make a file named `senseis_controller.rb` and follow the same steps you followed for `dojos_controller.rb`. Here's the index method again: 
+Next, run `rails g controller Senseis` and follow the same steps you followed for `dojos_controller.rb`. Here's the index method again: 
 
 ```rb
 def index
@@ -131,7 +135,7 @@ Now, let's define the relationship between our three tables by adding the follow
 ## Add to Seed Data
 - Uncomment the rest of the seed data in the db/seeds 
 
-- Next, run `rails db:reset`. You **do not** need to run `rails db:seed` after this command; it will happen automatically.
+- Next, run `rails db:seed`
 
 In the terminal, type `rails c` to open up the console to check your app's updated database. Using active record, check the following:
   - `Dojo.find(1).students`
@@ -140,7 +144,7 @@ In the terminal, type `rails c` to open up the console to check your app's updat
   - `Sensei.second.students`
   - `Dojo.first.senseis.first.students`
   
-Awesome! Now lets set up some endpoints so our newly thicc data can be accessed.
+Awesome! Now lets set up some endpoints so our newly seeded data can be accessed.
 
 ## Set up Routes
 In config/routes.rb, add `:students` as a nested route within `:senseis`:
@@ -154,8 +158,10 @@ end
 
 Check your routes in the controller with `rails routes`. Take a look at how the nested models are reflected in the URLs.
 
+> note: deeply nested routes are typically frowned upon. Furthermore, you should definitely not nest your routes any deeper than this.
+
 ## Add StudentsController
-Time to set up some logic for our student model. Add a `students_controller.rb` file to your `app/controllers` folder. Like before, see if you can use your other controllers to figure out what needs to go here. On your get routes, try to `include:` both `sensei` and `dojo` data when you return the students JSON. You may have to look up the sytax for this. 
+Time to set up some logic for our student model. Run `rails g controller Students` to add a `students_controller.rb` file to your `app/controllers` folder. Like before, see if you can use your other controllers to figure out what needs to go here. On your get routes, try to `include:` both `sensei` and `dojo` data when you return the students JSON. You may have to look up the syntax for this. 
 
 
 ## GET SERVED AGAIN
