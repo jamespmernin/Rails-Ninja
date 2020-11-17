@@ -1,7 +1,9 @@
-# rails-ninja
-Time to get some Rails reps in! In this lab, you're going to set up a full CRUD Rails API for dojos, senseis, and students.
+# Rails Ninja Exercise
 
-You'll do this in two parts:
+![ninja gif](https://media.giphy.com/media/ErdfMetILIMko/giphy.gif)
+
+Time to get some Rails reps in! In this lab, you're going to set up a full CRUD Rails API for dojos, senseis, and students. You'll do this in two parts:
+
 1. You'll build out a `one to many` backend featuring dojos that `has_many :senseis`
 1. You'll add a Student model to this backend so that dojos `has_many :students, through: :senseis`.
 
@@ -12,8 +14,8 @@ You'll do this in two parts:
 1. `rails new . -MT --skip-active-storage --api --database=postgresql`
 1. `rails db:create`
 
-
 ## Models
+
 Next you need to create your first 2 models. Remember, the format is `rails g model Model_Name column_name:data_type etc...`. Our Dojo model will have two columns, "name", which we'll leave as the default string, and "motto" which we'll set as "text":
 - `rails g model Dojo name motto:text`
 
@@ -118,6 +120,8 @@ If you see the appropriate JSON data at each of these endpoints, congrats!
 
 <hr>
 
+![](https://media.giphy.com/media/3o84TZfdJ6sXT2p9Qc/giphy.gif)
+
 # Part 2
 We're now going to add a Student model to our database and create a `has_many :through` relationship. Let's get started:
 
@@ -179,3 +183,4 @@ In your Gemfile, un-comment the line `gem 'rack-cors'`. Then, in your terminal, 
 
 Next, navigate to `config/initializers/cors.rb` and uncomment the entire `Rails.application.config.middleware...end` block. Make sure the origins are set to `"*"` for all.
 
+![](https://media.giphy.com/media/3o84TZfdJ6sXT2p9Qc/giphy.gif)
