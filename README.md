@@ -116,9 +116,6 @@ Make sure everything is saved and launch your rails server with `rails s`. Visit
   
 If you see the appropriate JSON data at each of these endpoints, congrats! 
 
-<hr>
-
-# Part 2
 We're now going to add a Student model to our database and create a `has_many :through` relationship. Let's get started:
 
 ## Add to Models
