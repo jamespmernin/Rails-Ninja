@@ -133,9 +133,7 @@ Make sure everything is saved and launch your rails server with `rails s`. Visit
   - `http://localhost:3000/dojos/1/senseis/1`
   - `http://localhost:3000/dojos/1/senseis/2`
   
-If you see the appropriate JSON data at each of these endpoints, congrats, Rails ninja! 
-
-![](https://media.giphy.com/media/3o84TZfdJ6sXT2p9Qc/giphy.gif)
+If you see the appropriate JSON data at each of these endpoints, congratulations, Rails ninja. 
 
 <hr>
 
