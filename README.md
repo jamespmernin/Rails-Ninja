@@ -177,7 +177,7 @@ Awesome! Now lets set up some endpoints so our newly seeded data can be accessed
 
 In config/routes.rb, add `:students` as a nested route within `:senseis`:
 
-```
+```rb
 resources :dojos do
   resources :senseis do 
     resources :students 
