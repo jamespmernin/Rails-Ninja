@@ -215,4 +215,8 @@ In your Gemfile, un-comment the line `gem 'rack-cors'`. Then, in your terminal, 
 
 Next, navigate to `config/initializers/cors.rb` and uncomment the entire `Rails.application.config.middleware...end` block. Make sure the origins are set to `"*"` for all.
 
+<hr>
+
+**_You are the real Rails Ninja now._**
+
 ![](https://media.giphy.com/media/3o84TZfdJ6sXT2p9Qc/giphy.gif)
