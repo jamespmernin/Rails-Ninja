@@ -44,7 +44,7 @@ Great! Now we'll need some data to see if everything is working the way we think
 
 ## Seed Data
 
-To get some data to work with, let's seed the database. Go to your `/db` folder and add the [seed data](./seed.rd) to your `seed.rb` file. **Do not uncomment the Student instances yet, since we haven't created the Student model.** Once done, run your seed file.
+To get some data to work with, let's seed the database. Go to your `/db` folder and add the [seed data](./seed.rb) to your `seed.rb` file. **Do not uncomment the Student instances yet, since we haven't created the Student model.** Once done, run your seed file.
 
 > `rails db:seed`
 
